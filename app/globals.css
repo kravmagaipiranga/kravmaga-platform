@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --crimson: #C41E3A;
+  --crimson-dark: #9B1530;
+  --crimson-glow: rgba(196, 30, 58, 0.25);
+  --steel-900: #0B0B0C;
+  --steel-800: #111113;
+  --steel-700: #18181B;
+  --steel-600: #222226;
+  --steel-500: #2E2E34;
+  --steel-400: #3F3F47;
+  --steel-300: #71717A;
+  --steel-200: #A1A1AA;
+  --steel-100: #D4D4D8;
+}
+
+@layer base {
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--steel-900);
+    color: #fff;
+    font-family: var(--font-barlow), sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-oswald), sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+}
+
+@layer components {
+  /* ── Campos de formulário ── */
+  .field-label {
+    @apply block text-xs font-semibold tracking-widest text-steel-200 uppercase mb-1.5;
+  }
+
+  .field-input {
+    @apply w-full bg-steel-800 border border-steel-500 text-white placeholder-steel-400
+           rounded px-4 py-3 text-sm font-body
+           focus:outline-none focus:border-crimson focus:ring-1 focus:ring-crimson/40
+           transition-all duration-200;
+  }
+
+  .field-input:focus {
+    box-shadow: 0 0 0 3px var(--crimson-glow);
+  }
+
+  .field-select {
+    @apply field-input appearance-none cursor-pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2371717A' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 2.5rem;
+  }
+
+  /* ── Botão primário ── */
+  .btn-primary {
+    @apply w-full py-4 bg-crimson hover:bg-crimson-light
+           font-display text-white font-semibold tracking-widest uppercase text-sm
+           rounded transition-all duration-200 active:scale-[0.98]
+           focus:outline-none focus:ring-2 focus:ring-crimson/50;
+  }
+
+  .btn-secondary {
+    @apply w-full py-3 bg-transparent border border-steel-500 hover:border-steel-300
+           font-display text-steel-200 hover:text-white font-semibold tracking-widest uppercase text-sm
+           rounded transition-all duration-200;
+  }
+
+  /* ── Card ── */
+  .card {
+    @apply bg-steel-800 border border-steel-600 rounded-lg p-6;
+  }
+
+  /* ── Badge de faixa ── */
+  .belt-white   { @apply bg-white text-steel-900; }
+  .belt-yellow  { @apply bg-yellow-400 text-steel-900; }
+  .belt-orange  { @apply bg-orange-500 text-white; }
+  .belt-green   { @apply bg-green-600 text-white; }
+  .belt-blue    { @apply bg-blue-600 text-white; }
+  .belt-brown   { @apply bg-amber-800 text-white; }
+  .belt-black   { @apply bg-steel-900 text-white border border-steel-400; }
+}
+
+/* ── Animações escalonadas ── */
+.anim-delay-1 { animation-delay: 0.1s; }
+.anim-delay-2 { animation-delay: 0.2s; }
+.anim-delay-3 { animation-delay: 0.3s; }
+.anim-delay-4 { animation-delay: 0.4s; }
+.anim-delay-5 { animation-delay: 0.5s; }
+
+/* ── Scrollbar customizada ── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--steel-800); }
+::-webkit-scrollbar-thumb { background: var(--steel-500); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--crimson); }

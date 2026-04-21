@@ -1,0 +1,15 @@
+{
+  "name": "Krav Magá — Plataforma de Gestão",
+  "short_name": "Krav Magá",
+  "description": "Gestão completa para academias de Krav Magá",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B0B0C",
+  "theme_color": "#0B0B0C",
+  "orientation": "portrait-primary",
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable any" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable any" }
+  ],
+  "categories": ["sports", "fitness", "education"]
+}
